@@ -1,7 +1,7 @@
 ---
 layout: post
-title:      "Sinatra Project: The Hidden Cafe"
-date:       2020-01-28 08:03:34 +0000
+title:      "Sinatra Project- The Hidden Cafe"
+date:       2020-01-28 03:03:34 -0500
 permalink:  sinatra_project_the_hidden_cafe
 ---
 
@@ -34,4 +34,45 @@ Helpers --> Helper classes to make my life easier and keep track of users
 + config (folder)
 + Rakefile
 
+**Functions**
+- My first task is to make sure my models and databases were talking to one another.
+- So I purposed that users had many products and products belonged to user.
 
+```
+# app/models/users.rb
+class Users < ActiveRecord::Base
+has_many :products
+
+end
+
+# db/migrate/create_users.rb
+class Users < ActiveRecord::Migration[5.1]
+  def change
+    create_table :users do |t|
+      t.string :username
+      t.string :password_digest
+    end
+  end
+end
+
+```
+
+```
+# app/models/products.rb
+class Products < ActiveRecord::Base
+belongs_to :users
+
+end
+
+# db/migrate/create_products.rb
+class Products < ActiveRecord::Migration[5.1]
+  def change
+    create_table :products do |t|
+      t.string :name
+      t.string :category
+			t.string :brand
+			t.decimal :price, :precision => 3, :scale => 2
+    end
+  end
+end
+```
