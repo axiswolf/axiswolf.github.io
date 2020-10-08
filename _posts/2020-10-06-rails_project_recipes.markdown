@@ -63,5 +63,14 @@ Controllers:
 -Recipies
 -UserFavorites
 
+**config/routes.rb**
 
+```
+
+  resources :users, only: [:show] do 
+    resources :recipes, only: [:show, :index]
+  end
+
+
+```
 
