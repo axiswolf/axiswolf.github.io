@@ -47,7 +47,7 @@ I'm creating a simple web application using rails to keep track of user recipes 
 - Only users who wrote the recipe will be allowed to edit or delete
 - You must have an account to create a recipe
 - Any user can favorite a recipe
-- Any user can create a category
+- Any user can create a category and only the creator gets to delete the category
 
 The models for this assignment are:
 - Recipes
@@ -56,6 +56,12 @@ The models for this assignment are:
 - Ingredients
 - Categories
 
+Model relationships:
+- Recipes have many ingredients and belongs to a category
+- Categories have many recipes
+- User favorites belongs to user and recipes (will have recipe_id and user_id)
+- User has many recipes, and favorite recipes through user favorites
+
 Controllers:
 -User
 -Categories
@@ -63,6 +69,8 @@ Controllers:
 -Recipies
 -UserFavorites
 
+
+Nesting for user/recipe
 **config/routes.rb**
 
 ```
