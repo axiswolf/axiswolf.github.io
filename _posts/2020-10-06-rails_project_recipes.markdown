@@ -69,6 +69,17 @@ Controllers:
 -Recipies
 -UserFavorites
 
+Database:
+User
+- username, password, first_name, last_name
+User Favorite
+- recipe_id and user_id
+Recipe
+-name, ingredients
+Ingredients
+-name, recipe_id
+Category
+-name, recipe_id
 
 Nesting for user/recipe
 **config/routes.rb**
