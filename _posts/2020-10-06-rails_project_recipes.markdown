@@ -43,6 +43,11 @@ permalink:  rails_project_recipes
 > 
 > • Follow patterns in the Rails Style Guide and the Ruby Style Guide.
 
+I'm creating a simple web application using rails to keep track of user recipes and their favorite recipes
+- Only users who wrote the recipe will be allowed to edit or delete
+- You must have an account to create a recipe
+- Any user can favorite a recipe
+- Any user can create a category
 
 The models for this assignment are:
 - Recipes
@@ -57,4 +62,6 @@ Controllers:
 -Sessions
 -Recipies
 -UserFavorites
+
+
 
